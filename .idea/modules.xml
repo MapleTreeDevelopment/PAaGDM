@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Authentication/Authentication.iml" filepath="$PROJECT_DIR$/Authentication/Authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GDL/GDL.iml" filepath="$PROJECT_DIR$/GDL/GDL.iml" />
       <module fileurl="file://$PROJECT_DIR$/GlobalDatabase/GlobalDatabase.iml" filepath="$PROJECT_DIR$/GlobalDatabase/GlobalDatabase.iml" />
       <module fileurl="file://$PROJECT_DIR$/PAaGDM.iml" filepath="$PROJECT_DIR$/PAaGDM.iml" />
     </modules>

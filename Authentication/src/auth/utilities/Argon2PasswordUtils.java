@@ -3,25 +3,43 @@ package auth.utilities;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 
+/**
+ * Utility-Klasse für die Passwortverarbeitung mit dem Argon2-Algorithmus.
+ */
 public class Argon2PasswordUtils {
 
-    // Passwort hashen
+    /**
+     * Erstellt einen sicheren Hash aus einem Passwort.
+     *
+     * @param password Das Passwort, das gehasht werden soll.
+     * @return Der generierte Hash als String.
+     */
     public static String hashPassword(String password) {
-        Argon2 argon2 = Argon2Factory.create(); // Standard-Konfiguration
+        Argon2 argon2 = Argon2Factory.create(); // Standardkonfiguration von Argon2
         try {
-            return argon2.hash(2, 65536, 1, password.toCharArray()); // 2 Iterationen, 64 MB RAM, 1 Thread
+            // Argon2-Parameter: 2 Iterationen, 64 MB RAM, 1 Thread
+            return argon2.hash(2, 65536, 1, password.toCharArray());
         } finally {
-            argon2.wipeArray(password.toCharArray()); // Sensible Daten aus dem Speicher löschen
+            // Sensible Daten (Passwort im Speicher) sicher löschen
+            argon2.wipeArray(password.toCharArray());
         }
     }
 
-    // Passwort validieren
+    /**
+     * Überprüft, ob ein Passwort zu einem gespeicherten Hash passt.
+     *
+     * @param password       Das eingegebene Passwort.
+     * @param hashedPassword Der gespeicherte Hash des Passworts.
+     * @return True, wenn das Passwort mit dem Hash übereinstimmt, sonst False.
+     */
     public static boolean verifyPassword(String password, String hashedPassword) {
         Argon2 argon2 = Argon2Factory.create();
         try {
-            return argon2.verify(hashedPassword, password.toCharArray()); // Prüfen, ob das Passwort zum Hash passt
+            // Verifiziert, ob der Passwort Hash mit dem eingegebenen Passwort übereinstimmt
+            return argon2.verify(hashedPassword, password.toCharArray());
         } finally {
-            argon2.wipeArray(password.toCharArray()); // Sensible Daten aus dem Speicher löschen
+            // Sensible Daten löschen
+            argon2.wipeArray(password.toCharArray());
         }
     }
 }

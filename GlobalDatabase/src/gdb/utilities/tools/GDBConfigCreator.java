@@ -7,10 +7,10 @@ import java.io.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-public class ConfigurationCreator {
+public class GDBConfigCreator {
 
-    private static final String config_path = "./filestore/utils_out/config";
-    private static final String secrets_path = "./filestore/utils_out/secrets";
+    private static final String config_path = "./filestore/utils_out/config.gdb";
+    private static final String secrets_path = "./filestore/utils_out/secrets.gdb";
 
     public static void main(String[] args) {
         createConfig();
@@ -22,10 +22,12 @@ public class ConfigurationCreator {
             IoBuffer buf = IoBuffer.allocate(1024);
             buf.setAutoExpand(true);
             buf.putInt(3306);//Port
-            BinaryFileManager.putString(buf, "");//host
-            BinaryFileManager.putString(buf, "");//user
+            BinaryFileManager.putString(buf, "localhost");//host
+            BinaryFileManager.putString(buf, "root");//user
             BinaryFileManager.putString(buf, "");//password
-            BinaryFileManager.putString(buf, "");//database
+            BinaryFileManager.putString(buf, "auth_server");//database
+            BinaryFileManager.putString(buf, "user_auth");//auth table
+            BinaryFileManager.putString(buf, "user_gamedata");//gd table
             buf.flip();
             byte[] data = new byte[buf.limit()];
             buf.get(data);
@@ -59,6 +61,7 @@ public class ConfigurationCreator {
             String host = BinaryFileManager.getString(buf);
             String user = BinaryFileManager.getString(buf);
             String password = BinaryFileManager.getString(buf);
+            String database = BinaryFileManager.getString(buf);
             System.out.println("Test reading of the config file:");
             System.out.println("Port: " + port);
             System.out.println("host: " + host);

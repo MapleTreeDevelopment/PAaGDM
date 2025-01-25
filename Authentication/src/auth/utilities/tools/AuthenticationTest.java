@@ -13,14 +13,14 @@ public class AuthenticationTest {
     public static void main(String[] args) {
         GlobalDatabase.init();
         //valid
-        if (Authentication.validateClear("test", "test")) {
+        if (Authentication.validate("test", "test")) {
             System.out.println("Info is valid!");
         } else {
             System.out.println("Info is invalid!");
         }
 
         //invalid
-        if (Authentication.validateClear("test", "test2")) {
+        if (Authentication.validate("test", "test09")) {
             System.out.println("Info is valid!");
         } else {
             System.out.println("Info is invalid!");
