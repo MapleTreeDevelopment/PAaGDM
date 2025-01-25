@@ -3,6 +3,10 @@ package gdl.playerdata.runescape;
 import gdl.playerdata.PlayerInformation;
 import org.apache.mina.core.buffer.IoBuffer;
 
+/**
+ * Do not use this class in final production.
+ * Functions are only for testing and do not function properly!
+ */
 public class Player {
 
     private Location location;

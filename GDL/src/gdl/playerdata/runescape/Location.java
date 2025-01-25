@@ -1,5 +1,9 @@
 package gdl.playerdata.runescape;
 
+/**
+ * Do not use this class in final production.
+ * Functions are only for testing and do not function properly!
+ */
 public class Location {
 
     private int x;
