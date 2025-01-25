@@ -1,5 +1,6 @@
-package gdb.utilities;
+package gdb.utilities.tools;
 
+import gdb.utilities.BinaryFileManager;
 import org.apache.mina.core.buffer.IoBuffer;
 
 import java.io.*;
