@@ -1,8 +1,8 @@
 package gdb.utilities;
 
+import gdb.DatabaseConfiguration;
 import org.apache.mina.core.buffer.IoBuffer;
 
-import gdb.DatabaseConfiguration;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;

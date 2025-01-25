@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
 
-    private static final String URL = "jdbc:mysql://"+ GlobalDatabase.databaseConfiguration.getHost() +
+    private static final String URL = "jdbc:mysql://" + GlobalDatabase.databaseConfiguration.getHost() +
             ":" + GlobalDatabase.databaseConfiguration.getPort() +
             "/" + GlobalDatabase.databaseConfiguration.getDatabase();//localhost:3306/runescape_server";
     private static final String USER = "root";

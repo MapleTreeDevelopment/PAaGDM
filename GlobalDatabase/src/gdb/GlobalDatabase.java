@@ -9,7 +9,7 @@ public class GlobalDatabase {
     public static void main(String[] args) {
         databaseConfiguration = new DatabaseConfiguration();
         try {
-            if(DatabaseManager.getConnection() != null)
+            if (DatabaseManager.getConnection() != null)
                 System.out.println("Database connection established!");
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -19,7 +19,7 @@ public class GlobalDatabase {
     public static void init() {
         databaseConfiguration = new DatabaseConfiguration();
         try {
-            if(DatabaseManager.getConnection() != null)
+            if (DatabaseManager.getConnection() != null)
                 System.out.println("Database connection established!");
         } catch (SQLException e) {
             throw new RuntimeException(e);
