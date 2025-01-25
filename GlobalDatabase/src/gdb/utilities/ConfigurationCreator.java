@@ -21,10 +21,10 @@ public class ConfigurationCreator {
             IoBuffer buf = IoBuffer.allocate(1024);
             buf.setAutoExpand(true);
             buf.putInt(3306);//Port
-            BinaryFileManager.putString(buf, "localhost");//host
-            BinaryFileManager.putString(buf, "root");//user
+            BinaryFileManager.putString(buf, "");//host
+            BinaryFileManager.putString(buf, "");//user
             BinaryFileManager.putString(buf, "");//password
-            BinaryFileManager.putString(buf, "auth_server");//database
+            BinaryFileManager.putString(buf, "");//database
             buf.flip();
             byte[] data = new byte[buf.limit()];
             buf.get(data);
