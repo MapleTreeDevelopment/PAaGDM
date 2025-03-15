@@ -18,4 +18,4 @@ Default config file:
 
 The auth_server SQL file is present in the root of the project. 
 Filename is auth_server.sql - There is a test user in the user_auth table. The password for the test user is encrypted using Argon2.
-The decrypted clear text password for the user is test. This can be used for testing purposes only.
+The decrypted clear text password for the user is test. This can be used for testing purposes.
